@@ -5,59 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>R.W. Long Lumber & Box Company</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f0e6; /* Warm parchment tone */
+      background: #f5f0e6;
       color: #333;
     }
-<nav style="background-color: #2d2d2d; padding: 10px 0; position: sticky; top: 0; z-index: 1000;">
-  <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: space-around;">
-    <a href="#home" style="color: white; text-decoration: none; font-weight: bold;">Home</a>
-    <a href="#products" style="color: white; text-decoration: none; font-weight: bold;">Products</a>
-    <a href="#quote" style="color: white; text-decoration: none; font-weight: bold;">Request a Quote</a>
-    <a href="#brochure" style="color: white; text-decoration: none; font-weight: bold;">Brochure</a>
-    <a href="#contact" style="color: white; text-decoration: none; font-weight: bold;">Contact</a>
-  </div>
-</nav>
-<header id="home">...</header>
 
-<section id="products">...</section>
+    nav {
+      background-color: #2d2d2d;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-<section id="quote">...</section>
+    nav div {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+    }
 
-<section id="brochure">...</section>
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-<footer id="contact">...</footer>
-html {
-  scroll-behavior: smooth;
-}
-
-    header {
-      background: #2d2d2d;
+    .hero {
+      background-image: url('banner.jpg'); /* Optional: replace with your own background image */
+      background-color: #3c3b6e;
       color: white;
       text-align: center;
-      padding: 40px 20px 30px;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .hero a {
+      background-color: #b22234;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
     }
 
     header img {
       max-width: 250px;
-      margin-bottom: 15px;
-    }
-
-    header p {
-      font-size: 1.2em;
-      margin: 0;
+      margin-bottom: 10px;
     }
 
     section {
       max-width: 800px;
       margin: 40px auto;
-      background: #fffdf9; /* slightly off-white content box */
+      background: #fffdf9;
       padding: 30px 20px;
-      border-left: 6px solid #b22234; /* deep red stripe */
-      border-right: 6px solid #3c3b6e; /* navy stripe */
+      border-left: 6px solid #b22234;
+      border-right: 6px solid #3c3b6e;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
@@ -85,6 +109,16 @@ html {
       cursor: pointer;
     }
 
+    a.download-btn {
+      display: inline-block;
+      background-color: #b22234;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -95,54 +129,66 @@ html {
 </head>
 <body>
 
+  <!-- Navigation Bar -->
+  <nav>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#quote">Request a Quote</a>
+      <a href="#brochure">Brochure</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero" id="home">
+    <h1>Stack Smarter. Ship Stronger.</h1>
+    <p>Durable. Collapsible. Reusable. Built to outperform the Gaylord.</p>
+    <a href="#quote">Request a Quote</a>
+  </div>
+
+  <!-- Logo and Tagline -->
   <header>
     <img src="logo.png" alt="R.W. Long Logo" />
     <p>Revolutionizing the Way the World Ships and Stores</p>
   </header>
 
-  <section>
-    <h2>The Box That Outlasts Cardboard</h2>
-    <p>
-      Our collapsible wooden box is stronger, longer-lasting, and more sustainable than traditional gaylords. Built to last 3+ years, repairable, and stackable at higher capacities—this box frees up space and lowers costs.
-    </p>
-    <p>
-      Whether you’re storing bulk food, automotive parts, or even liquid products with liners, our system adapts to your needs. Tear down in seconds. Store without worry. And do it all for the cost of a coffee per day.
-    </p>
-    <p><strong>Built by craftsmen. Backed by experience. Ready to work for you.</strong></p>
-  </section>
-
-  <section>
+  <!-- Products Section -->
+  <section id="products">
     <h2>Why Our Box Is a Game Changer</h2>
-    <ul style="list-style: square;">
-      <li><strong>Built to Outlast:</strong> Constructed from durable wood—not cardboard—our boxes last for years and withstand heavy industrial use.</li>
-      <li><strong>Stack with Confidence:</strong> Unlike traditional gaylords, our boxes are safely stackable two or three high, even under heavy loads.</li>
-      <li><strong>Collapsible Convenience:</strong> Set up and tear down in seconds. Store flat when empty. Save space. Save time.</li>
-      <li><strong>Custom Sizes:</strong> From compact suitcase-style boxes to oversized bulk containers—we build to your exact specs.</li>
-      <li><strong>Rent. Return. Reuse:</strong> Need temporary storage? Our rental option includes repairs and fast reshipment for seamless operations.</li>
-      <li><strong>Better Value, Long-Term Savings:</strong> Comparable in cost to cardboard, but 100x the reuse—making it the smart, sustainable choice.</li>
+    <ul>
+      <li><strong>Built to Outlast:</strong> Durable wood that lasts for years—not cardboard that collapses.</li>
+      <li><strong>Stack with Confidence:</strong> Go 2–3 high without fear of failure.</li>
+      <li><strong>Collapsible Convenience:</strong> Tear down in seconds, store flat, no mess.</li>
+      <li><strong>Custom Sizing:</strong> You give us the dimensions. We build the box.</li>
+      <li><strong>Rental Program:</strong> Send back for repair and reuse. No down time.</li>
+      <li><strong>Long-Term Value:</strong> Costs are comparable, but the lifespan is 100x better.</li>
     </ul>
-    <p style="margin-top: 20px;"><strong>Our mission is simple: Build better boxes, deliver better value, and support American industries with products that work as hard as you do.</strong></p>
+    <p><strong>Rugged. Repairable. Ready to work for your warehouse.</strong></p>
   </section>
 
-  <section>
+  <!-- Quote Section -->
+  <section id="quote">
     <h2>Request a Quote</h2>
-    <p>If you're interested in a custom box solution or want to learn more about our rental options, send us a quick message. We’ll get back to you promptly.</p>
-    <form action="mailto:info@rwlonglumber.com" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 10px; max-width: 600px;">
+    <p>If you're interested in a custom box solution or want to learn more about our rental options, send us a message.</p>
+    <form action="mailto:sales@rwlong.com" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 10px;">
       <input type="text" name="Name" placeholder="Your Name" required>
       <input type="email" name="Email" placeholder="Your Email" required>
-      <textarea name="Message" placeholder="What do you need? (Box dimensions, industry, quantity, etc.)" rows="5" required></textarea>
+      <textarea name="Message" placeholder="Tell us about your needs..." rows="5" required></textarea>
       <button type="submit">Submit Quote Request</button>
     </form>
   </section>
-<section>
-  <h2>Download Our Brochure</h2>
-  <p>Get a quick overview of what sets our boxes apart—features, benefits, and contact details all in one place.</p>
-  <a href="RW_Long_Brochure_with_Images.pdf" download style="display: inline-block; background-color: #b22234; color: white; padding: 12px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">
-    📄 Download the Brochure (PDF)
-  </a>
-</section>
 
-  <footer>
+  <!-- Brochure Download -->
+  <section id="brochure">
+    <h2>Download Our Brochure</h2>
+    <p>Everything you need to know about our collapsible wooden shipping boxes in one printable PDF.</p>
+    <a href="RW_Long_Brochure_with_Images.pdf" class="download-btn" download>📄 Download the Brochure</a>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer id="contact">
+    Contact us at: sales@rwlong.com | 513-932-5124<br/>
     © 2025 R.W. Long Lumber & Box Company — All Rights Reserved
   </footer>
 
