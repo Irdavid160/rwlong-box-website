@@ -17,12 +17,6 @@
       color: #333;
     }
 
-    nav div {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-around;
-    }
     nav {
       background-color: #2d2d2d;
       padding: 10px 0;
@@ -30,6 +24,14 @@
       top: 0;
       z-index: 1000;
     }
+
+    nav div {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -37,7 +39,6 @@
     }
 
     .hero {
-      background-image: url('banner.jpg'); /* Optional: replace with your own background image */
       background-color: #3c3b6e;
       color: white;
       text-align: center;
@@ -127,7 +128,14 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Hero Section -->
+  <div class="hero" id="home">
+    <h1>Stack Smarter. Ship Stronger.</h1>
+    <p>Durable. Collapsible. Reusable. Built to outperform the Gaylord.</p>
+    <a href="#quote">Request a Quote</a>
+  </div>
+
+  <!-- Navigation Bar (moved below hero) -->
   <nav>
     <div>
       <a href="#home">Home</a>
@@ -137,13 +145,6 @@
       <a href="#contact">Contact</a>
     </div>
   </nav>
-
-  <!-- Hero Section -->
-  <div class="hero" id="home">
-    <h1>Stack Smarter. Ship Stronger.</h1>
-    <p>Durable. Collapsible. Reusable. Built to outperform the Gaylord.</p>
-    <a href="#quote">Request a Quote</a>
-  </div>
 
   <!-- Logo and Tagline -->
   <header>
@@ -192,3 +193,4 @@
 
 </body>
 </html>
+
