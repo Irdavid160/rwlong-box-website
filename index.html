@@ -26,47 +26,48 @@
     }
 
     nav div {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      padding: 0 15px;
     }
 
     .hero {
       background-color: #3c3b6e;
       color: white;
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px 60px;
     }
 
     .hero h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin-bottom: 10px;
     }
 
     .hero p {
       font-size: 1.2em;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .hero a {
       background-color: #b22234;
       color: white;
       text-decoration: none;
-      padding: 12px 24px;
+      padding: 14px 28px;
       font-weight: bold;
       border-radius: 5px;
     }
 
     header {
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px 20px;
     }
 
     header img {
@@ -75,21 +76,30 @@
     }
 
     section {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fffdf9;
+      max-width: 960px;
+      margin: 50px auto;
       padding: 30px 20px;
-      border-left: 6px solid #b22234;
-      border-right: 6px solid #3c3b6e;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #ccc;
+      border-left: 5px solid #b22234;
+      margin-bottom: 20px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
 
     h2 {
       color: #2d2d2d;
+      font-size: 1.8em;
+      margin-bottom: 20px;
     }
 
-    ul {
-      padding-left: 20px;
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+      color: #3c3b6e;
     }
 
     input, textarea {
@@ -106,6 +116,7 @@
       font-size: 1em;
       border: none;
       cursor: pointer;
+      margin-top: 10px;
     }
 
     a.download-btn {
@@ -116,6 +127,7 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
+      margin-top: 10px;
     }
 
     footer {
@@ -135,12 +147,12 @@
     <a href="#quote">Request a Quote</a>
   </div>
 
-  <!-- Navigation Bar (moved below hero) -->
+  <!-- Navigation Bar -->
   <nav>
     <div>
       <a href="#home">Home</a>
       <a href="#products">Products</a>
-      <a href="#quote">Request a Quote</a>
+      <a href="#quote">Quote</a>
       <a href="#brochure">Brochure</a>
       <a href="#contact">Contact</a>
     </div>
@@ -148,50 +160,4 @@
 
   <!-- Logo and Tagline -->
   <header>
-    <img src="logo.png" alt="R.W. Long Logo" />
-    <p>Revolutionizing the Way the World Ships and Stores</p>
-  </header>
-
-  <!-- Products Section -->
-  <section id="products">
-  <h2>Why Our Box Is a Game Changer</h2>
-  <ul>
-    <li>🪵 <strong>Built to Outlast:</strong> Durable wood that lasts for years—not cardboard that collapses.</li>
-    <li📦 <strong>Stack with Confidence:</strong> Go 2–3 high without fear of failure.</li>
-    <li>🧰 <strong>Collapsible Convenience:</strong> Tear down in seconds, store flat, no mess.</li>
-    <li>📐 <strong>Custom Sizing:</strong> You give us the dimensions. We build the box.</li>
-    <li>🔁 <strong>Rental Program:</strong> Send back for repair and reuse. No down time.</li>
-    <li>💰 <strong>Long-Term Value:</strong> Costs are comparable, but the lifespan is 100x better.</li>
-  </ul>
-  <p><strong>Rugged. Repairable. Ready to work for your warehouse.</strong></p>
-</section>
-
-
-  <!-- Quote Section -->
-  <section id="quote">
-    <h2>Request a Quote</h2>
-    <p>If you're interested in a custom box solution or want to learn more about our rental options, send us a message.</p>
-    <form action="mailto:sales@rwlong.com" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 10px;">
-      <input type="text" name="Name" placeholder="Your Name" required>
-      <input type="email" name="Email" placeholder="Your Email" required>
-      <textarea name="Message" placeholder="Tell us about your needs..." rows="5" required></textarea>
-      <button type="submit">Submit Quote Request</button>
-    </form>
-  </section>
-
-  <!-- Brochure Download -->
-  <section id="brochure">
-    <h2>Download Our Brochure</h2>
-    <p>Everything you need to know about our collapsible wooden shipping boxes in one printable PDF.</p>
-    <a href="RW_Long_Brochure_with_Images.pdf" class="download-btn" download>📄 Download the Brochure</a>
-  </section>
-
-  <!-- Footer / Contact -->
-  <footer id="contact">
-    Contact us at: sales@rwlong.com | 513-932-5124<br/>
-    © 2025 R.W. Long Lumber & Box Company — All Rights Reserved
-  </footer>
-
-</body>
-</html>
-
+    <img src="logo.png" alt="R
