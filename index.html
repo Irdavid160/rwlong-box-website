@@ -47,18 +47,22 @@
     ul {
       padding-left: 20px;
     }
-<section>
-  <h2>Request a Quote</h2>
-  <p>If you're interested in a custom box solution or want to learn more about our rental options, send us a quick message. We’ll get back to you promptly.</p>
-  <form action="mailto:info@rwlonglumber.com" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 10px; max-width: 600px;">
-    <input type="text" name="Name" placeholder="Your Name" required style="padding: 10px; font-size: 1em;">
-    <input type="email" name="Email" placeholder="Your Email" required style="padding: 10px; font-size: 1em;">
-    <textarea name="Message" placeholder="What do you need? (Box dimensions, industry, quantity, etc.)" rows="5" required style="padding: 10px; font-size: 1em;"></textarea>
-    <button type="submit" style="background-color: #3c3b6e; color: white; padding: 12px; font-size: 1em; border: none; cursor: pointer;">
-      Submit Quote Request
-    </button>
-  </form>
-</section>
+
+    input, textarea {
+      padding: 10px;
+      font-size: 1em;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #3c3b6e;
+      color: white;
+      padding: 12px;
+      font-size: 1em;
+      border: none;
+      cursor: pointer;
+    }
 
     footer {
       text-align: center;
@@ -90,5 +94,29 @@
     <h2>Why Our Box Is a Game Changer</h2>
     <ul style="list-style: square;">
       <li><strong>Built to Outlast:</strong> Constructed from durable wood—not cardboard—our boxes last for years and withstand heavy industrial use.</li>
-      <li><strong>Stack with Confidence:</strong> Unlike traditional gaylords
+      <li><strong>Stack with Confidence:</strong> Unlike traditional gaylords, our boxes are safely stackable two or three high, even under heavy loads.</li>
+      <li><strong>Collapsible Convenience:</strong> Set up and tear down in seconds. Store flat when empty. Save space. Save time.</li>
+      <li><strong>Custom Sizes:</strong> From compact suitcase-style boxes to oversized bulk containers—we build to your exact specs.</li>
+      <li><strong>Rent. Return. Reuse:</strong> Need temporary storage? Our rental option includes repairs and fast reshipment for seamless operations.</li>
+      <li><strong>Better Value, Long-Term Savings:</strong> Comparable in cost to cardboard, but 100x the reuse—making it the smart, sustainable choice.</li>
+    </ul>
+    <p style="margin-top: 20px;"><strong>Our mission is simple: Build better boxes, deliver better value, and support American industries with products that work as hard as you do.</strong></p>
+  </section>
 
+  <section>
+    <h2>Request a Quote</h2>
+    <p>If you're interested in a custom box solution or want to learn more about our rental options, send us a quick message. We’ll get back to you promptly.</p>
+    <form action="mailto:info@rwlonglumber.com" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 10px; max-width: 600px;">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <textarea name="Message" placeholder="What do you need? (Box dimensions, industry, quantity, etc.)" rows="5" required></textarea>
+      <button type="submit">Submit Quote Request</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 R.W. Long Lumber & Box Company — All Rights Reserved
+  </footer>
+
+</body>
+</html>
