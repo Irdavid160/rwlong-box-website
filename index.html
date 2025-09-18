@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>R.W. Long Lumber & Box Company</title>
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Arial, sans-serif;
@@ -20,98 +22,182 @@
       padding: 30px 20px 10px;
       background-color: #ffffff;
     }
-    header img { max-width: 250px; margin-bottom: 10px; }
-    header p { font-size: 1.1em; color: #3c3b6e; margin: 0; }
 
-    /* HERO uses your new image */
+    header img {
+      max-width: 300px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: #3c3b6e;
+      margin: 0;
+    }
+
     .hero {
-      background: url('RW%20Logo%20Heading.png') no-repeat center center;
+      background: url('banner-hero.png') no-repeat center center;
       background-size: cover;
       color: white;
       text-align: center;
-      padding: 60px 20px 30px;
+      padding: 60px 20px 40px;
     }
+
     .hero .overlay {
       background-color: rgba(0, 0, 0, 0.5);
       display: inline-block;
       padding: 30px 20px;
       border-radius: 8px;
     }
-    .hero h1 { font-size: 2.8em; margin-bottom: 10px; }
-    .hero p { font-size: 1.2em; margin-bottom: 20px; }
-    .hero a {
-      background-color: #b22234; color: white; text-decoration: none;
-      padding: 14px 28px; font-weight: bold; border-radius: 5px;
-      display: inline-block;
+
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
     }
 
-    /* NEW: 3-image gallery under hero text */
-    .hero-gallery {
-      margin: 18px auto 0;
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: nowrap;
-      max-width: 960px;
-      padding: 0 12px 10px;
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
     }
+
+    .hero a {
+      background-color: #b22234;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    /* Gallery below the hero text */
+    .hero-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
     .hero-gallery img {
-      width: 100%;
-      max-width: 300px;      /* keeps them neat on large screens */
-      height: 170px;         /* crop to consistent height */
-      object-fit: cover;     /* clean crop */
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      width: 30%;
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     nav {
       background-color: #2d2d2d;
       padding: 10px 0;
-      position: sticky; top: 0; z-index: 1000;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
     nav div {
       max-width: 960px;
       margin: 0 auto;
-      display: flex; justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
     }
-    nav a { color: white; text-decoration: none; font-weight: bold; padding: 0 15px; }
 
-    section { max-width: 960px; margin: 50px auto; padding: 30px 20px; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0 15px;
+    }
+
+    section {
+      max-width: 960px;
+      margin: 50px auto;
+      padding: 30px 20px;
+    }
 
     .card {
-      background: #ffffff; border: 1px solid #ccc; border-left: 5px solid #b22234;
-      margin-bottom: 20px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      background: #ffffff;
+      border: 1px solid #ccc;
+      border-left: 5px solid #b22234;
+      margin-bottom: 20px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
-    h2 { color: #2d2d2d; font-size: 1.8em; margin-bottom: 20px; }
-    .card h3 { margin: 0 0 10px; font-size: 1.2em; color: #3c3b6e; }
 
-    input, textarea { padding: 10px; font-size: 1em; width: 100%; box-sizing: border-box; }
+    h2 {
+      color: #2d2d2d;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+      color: #3c3b6e;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 1em;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
     button {
-      background-color: #3c3b6e; color: white; padding: 12px;
-      font-size: 1em; border: none; cursor: pointer; margin-top: 10px;
+      background-color: #3c3b6e;
+      color: white;
+      padding: 12px;
+      font-size: 1em;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
     }
+
     a.download-btn {
-      display: inline-block; background-color: #b22234; color: white;
-      padding: 12px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 10px;
+      display: inline-block;
+      background-color: #b22234;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 10px;
     }
 
-    footer { text-align: center; padding: 20px; font-size: 14px; background: #e0e0e0; }
-
-    /* Mobile tweaks */
-    @media (max-width: 900px) {
-      .hero-gallery { flex-wrap: wrap; }
-      .hero-gallery img { max-width: calc(50% - 8px); height: 160px; }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background: #e0e0e0;
     }
+
     @media (max-width: 600px) {
-      nav div { flex-direction: column; align-items: center; }
-      nav a { padding: 8px 0; font-size: 16px; }
-      .hero h1 { font-size: 2em; }
-      .hero p { font-size: 1em; }
-      .hero .overlay { padding: 15px; }
-      .hero-gallery img { max-width: 100%; height: 160px; }
-      section { padding: 20px; }
-      .card { padding: 15px; }
-      header img { width: 180px; }
+      nav div {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        padding: 8px 0;
+        font-size: 16px;
+      }
+      .hero h1 {
+        font-size: 2em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+      .hero .overlay {
+        padding: 15px;
+      }
+      section {
+        padding: 20px;
+      }
+      .card {
+        padding: 15px;
+      }
+      header img {
+        width: 180px;
+      }
+      .hero-gallery img {
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -119,25 +205,9 @@
 
   <!-- Logo and Tagline -->
   <header>
-    <img src="logo.png" alt="R.W. Long Logo" />
+    <img src="RW%20Logo%20Heading.png" alt="R.W. Long Logo Heading" />
     <p>Revolutionizing the Way the World Ships and Stores</p>
   </header>
-
-  <!-- Hero Section -->
-  <div class="hero" id="home">
-    <div class="overlay">
-      <h1>Stack Smarter. Ship Stronger.</h1>
-      <p>Durable. Collapsible. Reusable. Built to outperform the Gaylord.</p>
-      <a href="#quote">Request a Quote</a>
-    </div>
-
-    <!-- NEW: three product images under hero text -->
-    <div class="hero-gallery" aria-label="Featured product images">
-      <img src="standardbox.png" alt="Standard Collapsible Wooden Box">
-      <img src="stacked%20standard.png" alt="Stacked Standard Boxes in Warehouse">
-      <img src="suitcasebox.png" alt="Suitcase-Style Collapsible Box">
-    </div>
-  </div>
 
   <!-- Navigation Bar -->
   <nav>
@@ -149,6 +219,22 @@
       <a href="#contact">Contact</a>
     </div>
   </nav>
+
+  <!-- Hero Section -->
+  <div class="hero" id="home">
+    <div class="overlay">
+      <h1>Stack Smarter. Ship Stronger.</h1>
+      <p>Durable. Collapsible. Reusable. Built to outperform the Gaylord.</p>
+      <a href="#quote">Request a Quote</a>
+    </div>
+
+    <!-- New product images gallery -->
+    <div class="hero-gallery">
+      <img src="standardbox.png" alt="Standard Box">
+      <img src="stacked%20standard.png" alt="Stacked Standard Box">
+      <img src="suitcasebox.png" alt="Suitcase Box">
+    </div>
+  </div>
 
   <!-- Product Features -->
   <section id="products">
@@ -212,8 +298,3 @@
 
 </body>
 </html>
-
-
-
-
-
