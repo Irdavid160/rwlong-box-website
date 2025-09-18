@@ -189,71 +189,6 @@
     </div>
   </nav>
 
-/* --- Collage sizing: two rows of three --- */
-.hero { padding: 24px 16px 8px; text-align: center; }
-
-.hero-gallery,
-.product-row {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin: 14px auto;
-  max-width: 1100px;  /* keeps it from getting too wide */
-}
-
-/* Each item constrained to ~5in x 3in on desktop */
-.hero-item,
-.product {
-  flex: 0 0 auto;
-}
-
-/* Image sizing: ~5in wide x 3in tall */
-.hero-item img,
-.product img {
-  width: 5in;            /* ≈ 480px at 96dpi */
-  height: 3in;           /* ≈ 288px */
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  display: block;
-}
-
-/* Captions only on first row */
-.hero-caption {
-  margin-top: 6px;
-  font-weight: 700;
-  color: #3c3b6e;
-  font-size: 0.98rem;
-}
-
-/* Tighter vertical rhythm */
-.hero h1 { margin: 6px 0; }
-.hero p  { margin: 6px 0 10px; }
-
-/* --- Responsive tweaks --- */
-@media (max-width: 900px) {
-  .hero-item img,
-  .product img {
-    width: 100%;
-    max-width: 340px;
-    height: 190px;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-gallery,
-  .product-row {
-    gap: 10px;
-  }
-  .hero-item img,
-  .product img {
-    max-width: 100%;
-    height: 170px;
-  }
-}
-
-  
 <!-- HERO SECTION: headline + two-row collage -->
 <div class="hero" id="home">
   <h1>Stack Smarter. Ship Stronger.</h1>
@@ -346,5 +281,6 @@
 
 </body>
 </html>
+
 
 
