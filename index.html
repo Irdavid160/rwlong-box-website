@@ -24,64 +24,14 @@
     }
 
     header img {
-      max-width: 300px;
+      max-width: 600px; /* doubled size */
       margin-bottom: 10px;
     }
 
     header p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       color: #3c3b6e;
       margin: 0;
-    }
-
-    .hero {
-      background: url('banner-hero.png') no-repeat center center;
-      background-size: cover;
-      color: white;
-      text-align: center;
-      padding: 60px 20px 40px;
-    }
-
-    .hero .overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-      display: inline-block;
-      padding: 30px 20px;
-      border-radius: 8px;
-    }
-
-    .hero h1 {
-      font-size: 2.8em;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      margin-bottom: 25px;
-    }
-
-    .hero a {
-      background-color: #b22234;
-      color: white;
-      text-decoration: none;
-      padding: 14px 28px;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-
-    /* Gallery below the hero text */
-    .hero-gallery {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-
-    .hero-gallery img {
-      width: 30%;
-      max-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     nav {
@@ -104,6 +54,37 @@
       text-decoration: none;
       font-weight: bold;
       padding: 0 15px;
+    }
+
+    /* Hero replacement */
+    .hero-section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-section h1 {
+      font-size: 2.8em;
+      color: #2d2d2d;
+      margin-bottom: 10px;
+    }
+
+    .hero-section p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .hero-caption {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #3c3b6e;
     }
 
     section {
@@ -177,26 +158,14 @@
         padding: 8px 0;
         font-size: 16px;
       }
-      .hero h1 {
+      .hero-section h1 {
         font-size: 2em;
       }
-      .hero p {
+      .hero-section p {
         font-size: 1em;
       }
-      .hero .overlay {
-        padding: 15px;
-      }
-      section {
-        padding: 20px;
-      }
-      .card {
-        padding: 15px;
-      }
       header img {
-        width: 180px;
-      }
-      .hero-gallery img {
-        width: 80%;
+        width: 280px;
       }
     }
   </style>
@@ -220,20 +189,18 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <div class="hero" id="home">
-    <div class="overlay">
-      <h1>Stack Smarter. Ship Stronger.</h1>
-      <p>Durable. Collapsible. Reusable. Built to outperform the Gaylord.</p>
-      <a href="#quote">Request a Quote</a>
-    </div>
+  <!-- Hero Section (new images stacked) -->
+  <div class="hero-section" id="home">
+    <h1>Stack Smarter. Ship Stronger.</h1>
+    <p>Durable. Collapsible. Reusable. Built to outperform the Gaylord.</p>
+    <img src="autofactory.png" alt="For Manufacturing" class="hero-image" />
+    <div class="hero-caption">For Manufacturing</div>
 
-    <!-- New product images gallery -->
-    <div class="hero-gallery">
-      <img src="standardbox.png" alt="Standard Box">
-      <img src="stacked%20standard.png" alt="Stacked Standard Box">
-      <img src="suitcasebox.png" alt="Suitcase Box">
-    </div>
+    <img src="Wooden%20Crates%20in%20Industrial%20Warehouse.png" alt="For Warehousing" class="hero-image" />
+    <div class="hero-caption">For Warehousing</div>
+
+    <img src="boatmotors.png" alt="Specialty Shipping" class="hero-image" />
+    <div class="hero-caption">Specialty Shipping</div>
   </div>
 
   <!-- Product Features -->
