@@ -29,115 +29,82 @@
       margin: 0;
     }
 
-    /* Hamburger Menu */
+    /* Hamburger button styles */
     .hamburger {
       display: none;
-      position: absolute;
+      position: fixed;
       top: 18px;
-      right: 24px;
-      width: 38px;
-      height: 38px;
+      right: 18px;
+      width: 44px;
+      height: 44px;
+      z-index: 2002;
       background: none;
       border: none;
       cursor: pointer;
-      z-index: 1002;
     }
     .hamburger span, .hamburger span:before, .hamburger span:after {
       display: block;
       background: #3c3b6e;
-      height: 4px;
-      width: 28px;
+      height: 5px;
+      width: 32px;
       border-radius: 2px;
       position: absolute;
-      content: '';
       transition: 0.3s;
     }
     .hamburger span {
-      top: 17px;
-      left: 5px;
+      top: 21px;
+      left: 6px;
     }
     .hamburger span:before {
+      content: '';
       top: -10px;
       left: 0;
+      position: absolute;
     }
     .hamburger span:after {
+      content: '';
       top: 10px;
       left: 0;
-    }
-    .hamburger span:before, .hamburger span:after {
       position: absolute;
     }
 
-    nav {
-      background-color: #2d2d2d;
-      position: sticky;
-      top: 0;
-      z-index: 1001;
-    }
-    nav .nav-container {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
+    /* Overlay menu */
+    #mobileMenu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(44,44,44,0.98);
+      z-index: 2001;
+      flex-direction: column;
       align-items: center;
-      position: relative;
+      justify-content: center;
     }
-    nav ul {
+    #mobileMenu.open {
       display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      transition: max-height 0.3s;
     }
-    nav ul li {
-      margin: 0;
-    }
-    nav a {
+    #mobileMenu a {
       color: white;
       text-decoration: none;
+      font-size: 1.6em;
       font-weight: bold;
-      padding: 0 15px;
-      font-size: 1em;
-      display: block;
-      height: 52px;
-      line-height: 52px;
+      margin: 18px 0;
+      padding: 14px 42px;
+      border-radius: 12px;
       transition: background 0.2s;
+      width: 80vw;
+      text-align: center;
     }
-    nav a:hover {
+    #mobileMenu a:hover {
       background: #3c3b6e;
     }
-    /* Responsive Hamburger */
     @media (max-width: 800px) {
-      nav .nav-container {
-        flex-direction: row;
-        align-items: center;
-      }
-      nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        background: #2d2d2d;
-        max-height: 0;
-        overflow: hidden;
-        width: 100%;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.14);
-      }
-      nav ul.open {
-        max-height: 500px;
-        padding-bottom: 16px;
-      }
-      nav a {
-        padding: 14px 24px;
-        height: auto;
-        line-height: normal;
-        font-size: 1.1em;
-      }
-      .hamburger {
-        display: block;
-      }
+      nav .nav-container, nav ul { display: none !important; }
+      .hamburger { display: block; }
     }
+    /* Hide scroll when menu is open */
+    body.menu-open { overflow: hidden; }
 
     /* --- Collage sizing: two rows of three --- */
     .hero { padding: 24px 16px 8px; text-align: center; }
@@ -296,20 +263,14 @@
 </head>
 <body id="top">
 
-  <!-- Logo and Tagline -->
-  <header id="top">
-    <img src="RW%20Logo%20Heading.png" alt="R.W. Long Logo Heading" />
-    <p>Revolutionizing the Way the World Ships and Stores</p>
-  </header>
-
-  <!-- Navigation Bar -->
+  <!-- Hamburger Menu Button (shows on mobile) -->
+  <button class="hamburger" aria-label="Open navigation" onclick="openMenu()">
+    <span></span>
+  </button>
+  <!-- Desktop Navigation Bar -->
   <nav>
     <div class="nav-container">
-      <!-- Hamburger menu button -->
-      <button class="hamburger" aria-label="Open navigation" onclick="toggleNav()">
-        <span></span>
-      </button>
-      <ul id="mainNav">
+      <ul>
         <li><a href="#top">Home</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#quote">Quote</a></li>
@@ -319,6 +280,17 @@
       </ul>
     </div>
   </nav>
+
+  <!-- Mobile Hamburger Overlay Menu -->
+  <div id="mobileMenu">
+    <a href="#top" onclick="closeMenu()">Home</a>
+    <a href="#products" onclick="closeMenu()">Products</a>
+    <a href="#quote" onclick="closeMenu()">Quote</a>
+    <a href="#brochure" onclick="closeMenu()">Brochure</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="https://youtube.com/shorts/jLnuD_jMdLI?feature=share" target="_blank" onclick="closeMenu()">Eazy Loop Demo</a>
+    <a href="javascript:void(0)" onclick="closeMenu()" style="color:#ccc;font-size:1em;">Close ✕</a>
+  </div>
 
   <!-- HERO SECTION: headline + two-row collage -->
   <div class="hero" id="home">
@@ -424,16 +396,19 @@
 
   <!-- Hamburger Menu Script & Back To Top Script -->
   <script>
-    function toggleNav() {
-      var nav = document.getElementById('mainNav');
-      nav.classList.toggle('open');
+    function openMenu() {
+      document.getElementById('mobileMenu').classList.add('open');
+      document.body.classList.add('menu-open');
     }
-    // Close nav on link click (mobile)
-    document.querySelectorAll('#mainNav a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        var nav = document.getElementById('mainNav');
-        nav.classList.remove('open');
-      });
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.body.classList.remove('menu-open');
+    }
+    // Optionally: close menu if window resizes to desktop
+    window.addEventListener('resize', function() {
+      if(window.innerWidth > 800){
+        closeMenu();
+      }
     });
 
     // Back to Top Button Show/Hide
