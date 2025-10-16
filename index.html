@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>R.W. Long Lumber & Box Company</title>
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    <!-- Floating Back to Top Button (add before </body>) -->
+<a href="#top" class="back-to-top" title="Back to Top">↑ Top</a>
+    
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -19,157 +25,109 @@
       padding: 30px 20px 10px;
       background-color: #ffffff;
     }
+
     header img {
-      max-width: 600px;
+      max-width: 600px; /* doubled size */
       margin-bottom: 10px;
     }
+
     header p {
       font-size: 1.2em;
       color: #3c3b6e;
       margin: 0;
     }
 
-    /* Hamburger button styles */
-    .hamburger {
-      display: none;
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      width: 44px;
-      height: 44px;
-      z-index: 2002;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    .hamburger span, .hamburger span:before, .hamburger span:after {
-      display: block;
-      background: #3c3b6e;
-      height: 5px;
-      width: 32px;
-      border-radius: 2px;
-      position: absolute;
-      transition: 0.3s;
-    }
-    .hamburger span {
-      top: 21px;
-      left: 6px;
-    }
-    .hamburger span:before {
-      content: '';
-      top: -10px;
-      left: 0;
-      position: absolute;
-    }
-    .hamburger span:after {
-      content: '';
-      top: 10px;
-      left: 0;
-      position: absolute;
+    nav {
+      background-color: #2d2d2d;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    /* Overlay menu */
-    #mobileMenu {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(44,44,44,0.98);
-      z-index: 2001;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    #mobileMenu.open {
+    nav div {
+      max-width: 960px;
+      margin: 0 auto;
       display: flex;
+      justify-content: space-between;
     }
-    #mobileMenu a {
+
+    nav a {
       color: white;
       text-decoration: none;
-      font-size: 1.6em;
       font-weight: bold;
-      margin: 18px 0;
-      padding: 14px 42px;
-      border-radius: 12px;
-      transition: background 0.2s;
-      width: 80vw;
-      text-align: center;
+      padding: 0 15px;
     }
-    #mobileMenu a:hover {
-      background: #3c3b6e;
-    }
-    @media (max-width: 800px) {
-      nav .nav-container, nav ul { display: none !important; }
-      .hamburger { display: block; }
-    }
-    /* Hide scroll when menu is open */
-    body.menu-open { overflow: hidden; }
 
-    /* --- Collage sizing: two rows of three --- */
-    .hero { padding: 24px 16px 8px; text-align: center; }
-    .hero-gallery,
-    .product-row {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 14px auto;
-      max-width: 1100px;
-    }
-    .hero-item,
-    .product {
-      flex: 0 0 auto;
-    }
-    .hero-item img,
-    .product img {
-      width: 3in;
-      height: 1.5in;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      display: block;
-      max-width: 100%;
-    }
-    .hero-caption {
-      margin-top: 6px;
-      font-weight: 700;
-      color: #3c3b6e;
-      font-size: 0.98rem;
-    }
-    .hero h1 { margin: 6px 0; }
-    .hero p  { margin: 6px 0 10px; }
+   /* --- Collage sizing: two rows of three --- */
+.hero { padding: 24px 16px 8px; text-align: center; }
 
-    @media (max-width: 900px) {
-      .hero-item img,
-      .product img {
-        width: 100%;
-        max-width: 340px;
-        height: 190px;
-      }
-    }
-    @media (max-width: 600px) {
-      .hero-gallery,
-      .product-row {
-        gap: 10px;
-      }
-      .hero-item img,
-      .product img {
-        max-width: 100%;
-        height: 140px;
-      }
-    }
+.hero-gallery,
+.product-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 14px auto;
+  max-width: 1100px;  /* keeps it from getting too wide */
+}
+
+/* Each item constrained to ~5in x 3in on desktop */
+.hero-item,
+.product {
+  flex: 0 0 auto;
+}
+
+/* Image sizing: ~5in wide x 3in tall */
+.hero-item img,
+.product img {
+  width: 3in;            /* ≈ 480px at 96dpi */
+  height: 1.5in;           /* ≈ 288px */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  display: block;
+}
+
+/* Captions only on first row */
+.hero-caption {
+  margin-top: 6px;
+  font-weight: 700;
+  color: #3c3b6e;
+  font-size: 0.98rem;
+}
+
+/* Tighter vertical rhythm */
+.hero h1 { margin: 6px 0; }
+.hero p  { margin: 6px 0 10px; }
+
+/* --- Responsive tweaks --- */
+@media (max-width: 900px) {
+  .hero-item img,
+  .product img {
+    width: 100%;
+    max-width: 340px;
+    height: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-gallery,
+  .product-row {
+    gap: 10px;
+  }
+  .hero-item img,
+  .product img {
+    max-width: 100%;
+    height: 170px;
+  }
+}
+
 
     section {
       max-width: 960px;
       margin: 50px auto;
       padding: 30px 20px;
-    }
-    @media (max-width: 600px) {
-      section {
-        padding: 16px 8px;
-        margin: 24px auto;
-      }
     }
 
     .card {
@@ -180,21 +138,13 @@
       padding: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
-    @media (max-width: 600px) {
-      .card {
-        padding: 14px;
-        font-size: 1em;
-      }
-      h2 {
-        font-size: 1.3em;
-      }
-    }
 
     h2 {
       color: #2d2d2d;
       font-size: 1.8em;
       margin-bottom: 20px;
     }
+
     .card h3 {
       margin: 0 0 10px;
       font-size: 1.2em;
@@ -207,6 +157,7 @@
       width: 100%;
       box-sizing: border-box;
     }
+
     button {
       background-color: #3c3b6e;
       color: white;
@@ -216,6 +167,7 @@
       cursor: pointer;
       margin-top: 10px;
     }
+
     a.download-btn {
       display: inline-block;
       background-color: #b22234;
@@ -227,123 +179,115 @@
       margin-top: 10px;
     }
 
-    /* Back to Top Floating Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #b22234;
-      color: white;
-      padding: 16px 20px;
-      border-radius: 50px;
-      font-size: 20px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      opacity: 0.85;
-      z-index: 1100;
-      transition: opacity 0.2s, background 0.2s;
-      display: none;
-    }
-    .back-to-top.show {
-      display: block;
-    }
-    .back-to-top:hover {
-      opacity: 1;
-      background: #3c3b6e;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
       font-size: 14px;
       background: #e0e0e0;
     }
+
+    @media (max-width: 600px) {
+      nav div {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        padding: 8px 0;
+        font-size: 16px;
+      }
+      .hero-section h1 {
+        font-size: 2em;
+      }
+      .hero-section p {
+        font-size: 1em;
+      }
+      header img {
+        width: 280px;
+      }
+    }
   </style>
 </head>
-<body id="top">
+<body>
 
-  <!-- Hamburger Menu Button (shows on mobile) -->
-  <button class="hamburger" aria-label="Open navigation" onclick="openMenu()">
-    <span></span>
-  </button>
-  <!-- Desktop Navigation Bar -->
+  <!-- Logo and Tagline -->
+  <header>
+    <img src="RW%20Logo%20Heading.png" alt="R.W. Long Logo Heading" />
+    <p>Revolutionizing the Way the World Ships and Stores</p>
+  </header>
+
+  <!-- Navigation Bar -->
   <nav>
-    <div class="nav-container">
-      <ul>
-        <li><a href="#top">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#quote">Quote</a></li>
-        <li><a href="#brochure">Brochure</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="https://youtube.com/shorts/jLnuD_jMdLI?feature=share" target="_blank">Eazy Loop Demo</a></li>
-      </ul>
+    <div>
+      <!-- Removed Home link as requested -->
+      <a href="#top">Home</a>
+      <a href="#products">Products</a>
+      <a href="#quote">Quote</a>
+      <a href="#brochure">Brochure</a>
+      <a href="#contact">Contact</a>
+      <!-- New Eazy Loop Demo link added to the right -->
+      <a href="https://youtube.com/shorts/jLnuD_jMdLI?feature=share" target="_blank">Eazy Loop Demo</a>
     </div>
   </nav>
 
-  <!-- Mobile Hamburger Overlay Menu -->
-  <div id="mobileMenu">
-    <a href="#top" onclick="closeMenu()">Home</a>
-    <a href="#products" onclick="closeMenu()">Products</a>
-    <a href="#quote" onclick="closeMenu()">Quote</a>
-    <a href="#brochure" onclick="closeMenu()">Brochure</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
-    <a href="https://youtube.com/shorts/jLnuD_jMdLI?feature=share" target="_blank" onclick="closeMenu()">Eazy Loop Demo</a>
-    <a href="javascript:void(0)" onclick="closeMenu()" style="color:#ccc;font-size:1em;">Close ✕</a>
-  </div>
+<!-- HERO SECTION: headline + two-row collage -->
+<div class="hero" id="home">
+  <h1>Stack Smarter. Ship Stronger.</h1>
+  <p>Durable. Collapsible. Reusable. Built to outperform the Gaylord.</p>
 
-  <!-- HERO SECTION: headline + two-row collage -->
-  <div class="hero" id="home">
-    <h1>Stack Smarter. Ship Stronger.</h1>
-    <p>Durable. Collapsible. Reusable. Built to outperform the Gaylord.</p>
-
-    <!-- Row 1: three images with captions -->
-    <div class="hero-gallery">
-      <div class="hero-item">
-        <img src="autofactory.png" alt="For Manufacturing">
-        <div class="hero-caption">For Manufacturing</div>
-      </div>
-      <div class="hero-item">
-        <img src="boxes%20in%20grocery.png" alt="For Produce Shipping and Display">
-        <div class="hero-caption">For Produce Shipping &amp; Display</div>
-      </div>
-      <div class="hero-item">
-        <img src="boatmotors.png" alt="Specialty Sizes">
-        <div class="hero-caption">Specialty Sizes</div>
-      </div>
+  <!-- Row 1: three images with captions -->
+  <div class="hero-gallery">
+    <div class="hero-item">
+      <img src="autofactory.png" alt="For Manufacturing">
+      <div class="hero-caption">For Manufacturing</div>
     </div>
-
-    <!-- Row 2: three product images (no captions) -->
-    <div class="product-row">
-      <div class="product"><img src="standardbox.png" alt="Standard Box"></div>
-      <div class="product"><img src="suitcasebox.png" alt="Suitcase Box"></div>
-      <div class="product"><img src="stacked%20standard.png" alt="Stacked Standard Box"></div>
+    <div class="hero-item">
+      <img src="boxes%20in%20grocery.png" alt="For Produce Shipping and Display">
+      <div class="hero-caption">For Produce Shipping &amp; Display</div>
+    </div>
+    <div class="hero-item">
+      <img src="boatmotors.png" alt="Specialty Sizes">
+      <div class="hero-caption">Specialty Sizes</div>
     </div>
   </div>
+
+  <!-- Row 2: three product images (no captions) -->
+  <div class="product-row">
+    <div class="product"><img src="standardbox.png" alt="Standard Box"></div>
+    <div class="product"><img src="suitcasebox.png" alt="Suitcase Box"></div>
+    <div class="product"><img src="stacked%20standard.png" alt="Stacked Standard Box"></div>
+  </div>
+</div>
+
 
   <!-- Product Features -->
   <section id="products">
     <h2>What Makes Our Box Different</h2>
+
     <div class="card">
       <h3>Built to Outlast</h3>
       <p>Constructed from industrial-grade wood, our boxes are engineered to withstand years of abuse—far beyond what cardboard can offer.</p>
     </div>
+
     <div class="card">
       <h3>Stack with Confidence</h3>
       <p>Designed for real warehouse work—our boxes stack 2–3 high with heavier loads, safely and reliably.</p>
     </div>
+
     <div class="card">
       <h3>Collapsible Convenience</h3>
       <p>Fold down in seconds. Save floor space. Eliminate clutter without compromising strength.</p>
     </div>
+
     <div class="card">
       <h3>Custom Sizing Available</h3>
       <p>From compact bins to full pallet replacements—we’ll build to fit your specs, industry, and workflow.</p>
     </div>
+
     <div class="card">
       <h3>Rental Options</h3>
       <p>Need a temporary solution? Our rental program includes returns, repairs, and replacements as needed.</p>
     </div>
+
     <div class="card">
       <h3>Smart Long-Term Investment</h3>
       <p>Comparable in cost to cardboard gaylords—but built to last 100x longer. Fewer replacements. More value.</p>
@@ -368,7 +312,7 @@
     <p>Everything you need to know in one printable PDF. Perfect for internal pitch decks or purchase approvals.</p>
     <a href="brochure.pdf" class="download-btn" download>📄 Download the Brochure</a>
   </section>
-
+  
   <!-- Contact Us Section -->
   <section id="contact-us">
     <h2>Contact Us</h2>
@@ -376,7 +320,7 @@
       <strong>Email:</strong><br>
       <a href="mailto:RodneyLong@4rwlong.com">RodneyLong@4rwlong.com</a><br>
       <a href="mailto:Quote@4rwlong.com">Quote@4rwlong.com</a>
-    </p>
+      </p>
     <p>
       <strong>Phone:</strong><br>
       513-932-5124 Office<br>
@@ -384,42 +328,12 @@
       513-709-5664 Cell
     </p>
   </section>
-
-  <!-- Floating Back to Top Button -->
-  <a href="#top" class="back-to-top" title="Back to Top" id="backToTopBtn">↑ Top</a>
-
+  
   <!-- Footer -->
   <footer id="contact">
-    Contact us at: sales@rwlong.com | 513-932-5124<br/>
+    Contact us at: RodneyLong@rwlong.com | 513-932-5124 Office 513-932-0362 Fax<br/>
     © 2025 R.W. Long Lumber & Box Company — All Rights Reserved
   </footer>
 
-  <!-- Hamburger Menu Script & Back To Top Script -->
-  <script>
-    function openMenu() {
-      document.getElementById('mobileMenu').classList.add('open');
-      document.body.classList.add('menu-open');
-    }
-    function closeMenu() {
-      document.getElementById('mobileMenu').classList.remove('open');
-      document.body.classList.remove('menu-open');
-    }
-    // Optionally: close menu if window resizes to desktop
-    window.addEventListener('resize', function() {
-      if(window.innerWidth > 800){
-        closeMenu();
-      }
-    });
-
-    // Back to Top Button Show/Hide
-    window.addEventListener('scroll', function() {
-      var btn = document.getElementById('backToTopBtn');
-      if (window.scrollY > 200) {
-        btn.classList.add('show');
-      } else {
-        btn.classList.remove('show');
-      }
-    });
-  </script>
 </body>
 </html>
