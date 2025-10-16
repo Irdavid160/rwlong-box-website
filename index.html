@@ -194,6 +194,28 @@
       font-size: 14px;
       background: #e0e0e0;
     }
+
+    footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background: #e0e0e0;
+  /* Add this for desktop */
+  padding-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: 60px;        /* Move button up higher */
+    right: 12px;
+    padding: 11px 16px;  /* Smaller button on mobile */
+    font-size: 1em;
+  }
+  footer {
+    padding-bottom: 80px; /* Extra space for mobile */
+  }
+}
+    
   </style>
 </head>
 <body id="top">
@@ -327,3 +349,4 @@
   </script>
 </body>
 </html>
+
