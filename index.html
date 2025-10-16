@@ -17,6 +17,7 @@
       text-align: center;
       padding: 30px 20px 10px;
       background-color: #ffffff;
+      position: relative;
     }
     header img {
       max-width: 100%;
@@ -29,6 +30,93 @@
       margin: 0;
     }
 
+    /* Hamburger for mobile, top left */
+    .hamburger {
+      display: none;
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 2002;
+    }
+    .hamburger span, .hamburger span:before, .hamburger span:after {
+      display: block;
+      background: #3c3b6e;
+      height: 5px;
+      width: 32px;
+      border-radius: 2px;
+      position: absolute;
+      transition: 0.3s;
+    }
+    .hamburger span {
+      top: 21px;
+      left: 6px;
+    }
+    .hamburger span:before {
+      content: '';
+      top: -10px;
+      left: 0;
+      position: absolute;
+    }
+    .hamburger span:after {
+      content: '';
+      top: 10px;
+      left: 0;
+      position: absolute;
+    }
+    /* Hamburger visible on mobile only */
+    @media (max-width: 700px) {
+      .hamburger { display: block; }
+    }
+
+    /* Overlay mobile menu styles */
+    #mobileMenu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(44,44,44,0.97);
+      z-index: 2001;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #mobileMenu.open {
+      display: flex;
+    }
+    #mobileMenu a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.6em;
+      font-weight: bold;
+      margin: 18px 0;
+      padding: 14px 42px;
+      border-radius: 12px;
+      transition: background 0.2s;
+      width: 80vw;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+      background: #3c3b6e;
+    }
+    #mobileMenu a:hover {
+      background: #b22234;
+      color: #ffd700;
+    }
+    #mobileMenu .close {
+      background: transparent;
+      color: #ccc;
+      font-size: 1em;
+      margin-top: 22px;
+      box-shadow: none;
+    }
+    body.menu-open { overflow: hidden; }
+
+    /* Desktop navigation styles */
     nav {
       background-color: #2d2d2d;
       padding: 0;
@@ -63,36 +151,12 @@
       background: #3c3b6e;
       color: #ffd700;
     }
-
-    /* Responsive navigation for mobile */
+    /* Hide nav on mobile */
     @media (max-width: 700px) {
-      nav ul {
-        flex-direction: column;
-        align-items: stretch;
-        background: #222;
-        border-radius: 12px;
-        margin: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      }
-      nav a {
-        padding: 18px 0;
-        font-size: 1.2em;
-        border-bottom: 1px solid #444;
-        background: #3c3b6e;
-        color: #ffd700;
-        border-radius: 8px;
-        margin: 4px 10px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.10);
-      }
-      nav a:last-child {
-        border-bottom: none;
-      }
-      nav a:hover, nav a:focus {
-        background: #b22234;
-        color: #fff;
-      }
+      nav { display: none; }
     }
 
+    /* --- Collage sizing: two rows of three --- */
     .hero { padding: 24px 8px 8px; text-align: center; }
     .hero-gallery, .product-row {
       display: flex;
@@ -212,23 +276,38 @@
       padding: 20px;
       font-size: 14px;
       background: #e0e0e0;
-      padding-bottom: 50px;  /* Add this for desktop and extra spacing for button */
+      padding-bottom: 50px;
     }
-
     @media (max-width: 600px) {
       .back-to-top {
-        bottom: 60px;        /* Move button up higher */
+        bottom: 60px;
         right: 12px;
-        padding: 11px 16px;  /* Smaller button on mobile */
+        padding: 11px 16px;
         font-size: 1em;
       }
       footer {
-        padding-bottom: 80px; /* Extra space for mobile */
+        padding-bottom: 80px;
       }
     }
   </style>
 </head>
 <body id="top">
+
+  <!-- Hamburger Menu Button (top left of header, mobile only) -->
+  <button class="hamburger" aria-label="Open navigation" onclick="openMenu()">
+    <span></span>
+  </button>
+
+  <!-- Mobile Hamburger Overlay Menu -->
+  <div id="mobileMenu">
+    <a href="#top" onclick="closeMenu()">Home</a>
+    <a href="#products" onclick="closeMenu()">Products</a>
+    <a href="#quote" onclick="closeMenu()">Quote</a>
+    <a href="#brochure" onclick="closeMenu()">Brochure</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="https://youtube.com/shorts/jLnuD_jMdLI?feature=share" target="_blank" onclick="closeMenu()">Eazy Loop Demo</a>
+    <a href="javascript:void(0)" class="close" onclick="closeMenu()">Close ✕</a>
+  </div>
 
   <!-- Logo and Tagline -->
   <header id="top">
@@ -236,7 +315,7 @@
     <p>Revolutionizing the Way the World Ships and Stores</p>
   </header>
 
-  <!-- Navigation Bar -->
+  <!-- Desktop Navigation Bar (hidden on mobile) -->
   <nav>
     <ul>
       <li><a href="#top">Home</a></li>
@@ -347,6 +426,21 @@
   </footer>
 
   <script>
+    function openMenu() {
+      document.getElementById('mobileMenu').classList.add('open');
+      document.body.classList.add('menu-open');
+    }
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.body.classList.remove('menu-open');
+    }
+    // Optionally: close menu if window resizes to desktop
+    window.addEventListener('resize', function() {
+      if(window.innerWidth > 700){
+        closeMenu();
+      }
+    });
+
     // Back to Top Button Show/Hide
     window.addEventListener('scroll', function() {
       var btn = document.getElementById('backToTopBtn');
