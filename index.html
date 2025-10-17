@@ -292,6 +292,47 @@
         padding-bottom: 80px;
       }
     }
+
+    /* Add this near the end of the existing <style> block (mobile-only tweaks) */
+
+@media (max-width: 700px) {
+  /* Make the hamburger button and bars smaller so it doesn't crowd the logo */
+  .hamburger {
+    top: 8px;        /* nudge a bit closer to the top */
+    left: 8px;       /* keep it visible but compact */
+    width: 36px;     /* smaller hit area but still tappable */
+    height: 36px;
+  }
+
+  .hamburger span,
+  .hamburger span:before,
+  .hamburger span:after {
+    height: 3px;     /* thinner bars */
+    width: 22px;     /* shorter bars */
+    border-radius: 2px;
+  }
+
+  .hamburger span {
+    top: 16px;       /* center the bars vertically in the smaller button */
+    left: 6px;
+  }
+
+  .hamburger span:before { top: -8px; }  /* adjusted offsets for the thinner bars */
+  .hamburger span:after  { top: 8px; }
+
+  /* Reduce logo width slightly on narrow screens so it won't be under the button */
+  header img {
+    width: 260px;
+    max-width: 78%;
+  }
+
+  /* Optional: if the logo still gets too close, add small left padding to header content */
+  header {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+    
   </style>
 </head>
 <body id="top">
@@ -456,4 +497,5 @@
   </script>
 </body>
 </html>
+
 
